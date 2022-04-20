@@ -16,10 +16,9 @@ const Home: NextPage = () => {
     <Flex direction="column" w="100%" align="center" marginX="auto">
       <Flex direction="column">
         <Heading
-          fontFamily="sans-serif"
           fontSize="8.5rem"
           textAlign="center"
-          marginY="2rem"
+          marginTop="2rem"
           fontWeight="light"
         >
           Alehouse Fire
@@ -31,6 +30,7 @@ const Home: NextPage = () => {
           fontWeight="normal"
           color="gold"
           textAlign="center"
+          transform="translateY(-.7rem)"
         >
           irish music for your soul
         </Heading>
@@ -39,8 +39,9 @@ const Home: NextPage = () => {
           fontSize="1.7rem"
           fontWeight="semibold"
           textAlign="center"
-          marginTop="1rem"
+          marginTop="3rem"
           letterSpacing=".2rem"
+          marginBottom="1rem"
         >
           Welcome to the home of California&apos;s premier Irish Pub
           Folk&apos;n&apos;Roll Band!
@@ -52,7 +53,7 @@ const Home: NextPage = () => {
         w="100%"
         justify="center"
         borderBottom="1px solid white"
-        paddingY="2rem"
+        paddingY="1.5rem"
         align={{base: "center", lg: "flex-start"}}
       >
         <Flex
@@ -74,7 +75,7 @@ const Home: NextPage = () => {
         <Flex
           direction="column"
           w={{base: "100%", lg: "40%"}}
-          marginLeft={{lg: "3rem"}}
+          marginLeft={{lg: "4rem"}}
         >
           {descriptionParagraphs.map((paragraph) => {
             return (
