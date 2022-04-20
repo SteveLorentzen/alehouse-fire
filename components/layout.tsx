@@ -43,7 +43,7 @@ function Header() {
         </Link>
       </Flex>
       <List
-        display="flex"
+        display={{base: "none", md: "flex"}}
         justifyContent="space-between"
         flexBasis={{base: "25rem", md: "30rem", lg: "35rem", xl: "40rem"}}
       >
