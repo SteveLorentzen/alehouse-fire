@@ -1,4 +1,6 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
+import {PageContentContainer} from "components/ui/page-content-container";
+import {PageHeading} from "components/ui/page-heading";
 
 const countrySongs = [
   {title: "Africa", band: "Toto"},
@@ -141,7 +143,7 @@ const irishSongs = [
 
 function Song({title, band}: {title: string; band: string}) {
   return (
-    <Flex fontSize="1.3rem">
+    <Flex fontSize="1.3rem" marginBottom=".5rem">
       <Text>{`${title} - ${band}`}</Text>
     </Flex>
   );
@@ -149,10 +151,8 @@ function Song({title, band}: {title: string; band: string}) {
 
 export default function SongList() {
   return (
-    <Flex direction="column">
-      <Heading as="h1" alignSelf="center" marginY="3rem">
-        Song List
-      </Heading>
+    <PageContentContainer>
+      <PageHeading text="Song List" />
       <Text fontSize="1.5rem" marginBottom="3rem">
         Alehouse Fire prides itself on playing the very best of traditional and
         modern Irish music. But we&apos;ve also done A LOT of
@@ -161,13 +161,19 @@ export default function SongList() {
         with our clients on special requests and are always working to add new
         material to our sets to keep the Irish fun going!
       </Text>
-      <Heading as="h2" marginBottom="2rem">
+      <Heading
+        as="h2"
+        marginBottom="2rem"
+        alignSelf="flex-start"
+        color="gold"
+        fontWeight="semibold"
+      >
         Our Current Repertoire:
       </Heading>
       <Flex w="100%" direction={{base: "column", lg: "row"}}>
         <Flex flex="1" direction="column" marginBottom="2rem">
           <Heading as="h3" fontSize="1.8rem" marginBottom="1rem">
-            Irish/Scottish/Celtic
+            Irish, Scottish, and Celtic
           </Heading>
           <Flex direction="column">
             {irishSongs.map((song) => {
@@ -187,7 +193,7 @@ export default function SongList() {
           marginLeft={{base: "none", lg: "3rem"}}
         >
           <Heading as="h3" fontSize="1.8rem" marginBottom="1rem">
-            Country/Bluegrass/Americana Covers
+            Country, Bluegrass, and Americana Covers
           </Heading>
           <Flex direction="column">
             {countrySongs.map((song) => {
@@ -202,6 +208,6 @@ export default function SongList() {
           </Flex>
         </Flex>
       </Flex>
-    </Flex>
+    </PageContentContainer>
   );
 }
