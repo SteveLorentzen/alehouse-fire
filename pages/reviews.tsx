@@ -1,4 +1,6 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
+import {PageContentContainer} from "components/ui/page-content-container";
+import {PageHeading} from "components/ui/page-heading";
 
 interface IReview {
   name: string;
@@ -189,11 +191,12 @@ function Review({review}: {review: IReview}) {
   return (
     <Flex direction="column" marginY="2rem">
       <Text
+        fontSize="2rem"
         fontWeight="bold"
         marginBottom=".3rem"
       >{`Review by ${review.name}`}</Text>
 
-      <Flex marginBottom="1.2rem">
+      <Flex direction={{base: "column", md: "row"}} marginBottom="1.2rem">
         {review.eventType && <Text marginRight="1rem">{review.eventType}</Text>}
         {review.date && (
           <Text marginRight="1rem">{`Reviewed on ${review.date}`}</Text>
@@ -211,7 +214,7 @@ function Review({review}: {review: IReview}) {
       <Flex direction="column">
         {review.content.map((paragraph) => {
           return (
-            <Text key={paragraph} marginY=".3rem">
+            <Text key={paragraph} marginY=".3rem" fontSize="1.5rem">
               {paragraph}
             </Text>
           );
@@ -223,24 +226,22 @@ function Review({review}: {review: IReview}) {
 
 export default function Reviews() {
   return (
-    <Flex direction="column" w="100%" align="center">
-      <Heading as="h1" marginTop="3rem" fontSize="6rem" fontWeight="light">
-        Reviews
-      </Heading>
-      <Heading as="h2" marginBottom="2rem" color="gold">
-        Check out what our clients have to say
-      </Heading>
+    <PageContentContainer>
+      <PageHeading text="Reviews" />
+      <Flex direction="column" maxW="50rem">
+        <Heading
+          as="h2"
+          color="gold"
+          alignSelf="flex-start"
+          fontWeight="normal"
+        >
+          Check out what our clients have to say:
+        </Heading>
 
-      <Text fontSize="1.5rem" textAlign="center">
-        Most of these reviews came in on the two booking sites we list on,
-        GigMasters and GigSalad.
-      </Text>
-
-      <Flex direction="column">
         {reviews.map((review) => {
           return <Review key={review.content[0]} review={review} />;
         })}
       </Flex>
-    </Flex>
+    </PageContentContainer>
   );
 }

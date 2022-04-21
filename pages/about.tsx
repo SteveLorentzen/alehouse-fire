@@ -1,4 +1,6 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
+import {PageContentContainer} from "components/ui/page-content-container";
+import {PageHeading} from "components/ui/page-heading";
 import Image from "next/image";
 
 const aboutParagraphs = [
@@ -29,11 +31,9 @@ const bandMembers = [
 
 function About() {
   return (
-    <Flex direction="column">
+    <PageContentContainer>
       <Flex w="100%" justify="center">
-        <Heading as="h1" marginY="3rem" fontSize="5rem" fontWeight="light">
-          About
-        </Heading>
+        <PageHeading text="About" />
       </Flex>
 
       <section>
@@ -41,8 +41,7 @@ function About() {
           <Flex
             flex={{base: "", lg: "1"}}
             w={{base: "100%", lg: "40rem"}}
-            minW="35rem"
-            h="28rem"
+            h={{base: "23rem", sm: "35rem", md: "45rem", lg: "28rem"}}
             position="relative"
             marginBottom="3rem"
           >
@@ -65,7 +64,7 @@ function About() {
         </Flex>
       </section>
       <section>
-        <Flex direction="column" marginBottom="4rem">
+        <Flex direction="column" marginBottom="4rem" align="center">
           <Heading as="h2" marginY="3rem">
             Musical Offerings
           </Heading>
@@ -81,7 +80,7 @@ function About() {
         </Flex>
       </section>
       <section>
-        <Flex direction="column" marginY="3rem">
+        <Flex direction="column" marginY="3rem" align="center">
           <Heading as="h2" marginBottom="3rem">
             Meet The Band
           </Heading>
@@ -89,22 +88,27 @@ function About() {
             {bandMembers.map((member) => {
               return (
                 <Flex
+                  direction={{base: "column", md: "row"}}
                   key={member.name}
                   w="100%"
                   justifyContent="space-between"
                   marginBottom="3rem"
+                  align="center"
+                  maxW={{base: "40rem", md: "none"}}
                 >
                   <Flex
                     position="relative"
                     h="25rem"
-                    w="21rem"
-                    order={member.pictureLocation === "right" ? 2 : 1}
-                    marginLeft={
-                      member.pictureLocation === "right" ? "3rem" : ""
-                    }
+                    w={{base: "100%", md: "22rem"}}
+                    order={{md: member.pictureLocation === "right" ? 2 : 1}}
+                    marginLeft={{
+                      base: "",
+                      md: member.pictureLocation === "right" ? "3rem" : "",
+                    }}
                     marginRight={
                       member.pictureLocation === "right" ? "" : "3rem"
                     }
+                    marginBottom="2rem"
                   >
                     <Image
                       src={member.src}
@@ -114,22 +118,30 @@ function About() {
                     ></Image>
                   </Flex>
                   <Flex
-                    w="80%"
+                    w={{base: "100%", md: "80%"}}
                     direction="column"
                     order={member.pictureLocation === "right" ? 1 : 2}
                   >
                     <Heading as="h3" marginBottom="1rem">
                       {member.name}
                     </Heading>
-                    <Flex>
+                    <Flex direction="row">
                       {member.instruments.map((instrument, index) => {
                         return (
                           <Flex key={instrument} alignItems="center">
-                            <Text fontSize="1.5rem" marginRight="1rem">
+                            <Text
+                              fontSize={{base: "1.1rem", sm: "1.5rem"}}
+                              marginRight={{base: ".6rem", md: "1rem"}}
+                            >
                               {instrument}
                             </Text>
                             {index !== member.instruments.length - 1 && (
-                              <Text marginRight="1rem">&bull;</Text>
+                              <Text
+                                display={{base: "none", sm: "inline-block"}}
+                                marginRight={{base: ".6rem", md: "1rem"}}
+                              >
+                                &bull;
+                              </Text>
                             )}
                           </Flex>
                         );
@@ -151,7 +163,7 @@ function About() {
           </Flex>
         </Flex>
       </section>
-    </Flex>
+    </PageContentContainer>
   );
 }
 

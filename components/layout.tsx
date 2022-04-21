@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import {Box, Flex, List, ListItem} from "@chakra-ui/react";
 import {generateKey} from "crypto";
+import {useRouter} from "next/router";
 
 const navButtons = [
   {
@@ -28,6 +29,8 @@ const navButtons = [
 ];
 
 function Header() {
+  const router = useRouter();
+
   return (
     <Flex
       display={{base: "hidden", sm: "flex"}}
@@ -35,7 +38,7 @@ function Header() {
       w="100%"
       h="5rem"
       align="center"
-      paddingX="3rem"
+      paddingX={{base: "1rem", lg: "3rem"}}
     >
       <Flex fontSize="1.5rem" _hover={{color: "gold"}}>
         <Link href="/">
@@ -53,6 +56,7 @@ function Header() {
               key={navButton.name}
               _hover={{color: "gold"}}
               fontSize="1.3rem"
+              color={navButton.href === router.pathname ? "gold" : "white"}
             >
               <Link href={navButton.href}>
                 <a>{navButton.name}</a>
@@ -74,12 +78,13 @@ export default function Layout({children}: {children: React.ReactChild}) {
     <Flex
       direction="column"
       w="100%"
-      bg="gray.700"
+      bg="gray.800"
       align="center"
       color="white"
+      fontSize="1.3rem"
     >
       <Header />
-      <Box paddingX="3rem">
+      <Box paddingX="2.5rem">
         <Flex maxW="80rem" margin="auto">
           {children}
         </Flex>

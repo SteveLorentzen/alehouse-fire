@@ -1,5 +1,6 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import type {NextPage} from "next";
+import Image from "next/image";
 
 const descriptionParagraphs = [
   "Alehouse Fire is an Irish, Americana, Bluegrass and Country Band that strives to provide the perfect combination of styles to best suit your event.",
@@ -13,38 +14,67 @@ const descriptionParagraphs = [
 
 const Home: NextPage = () => {
   return (
-    <Flex direction="column" w="100%" align="center" marginX="auto">
+    <Flex direction="column" w="100%" align="center">
       <Flex direction="column">
-        <Heading
-          fontSize="8.5rem"
-          textAlign="center"
-          marginTop="2rem"
-          fontWeight="light"
-        >
-          Alehouse Fire
-        </Heading>
-        <Heading
-          as="h2"
-          textTransform="capitalize"
-          fontSize="3.5rem"
-          fontWeight="normal"
-          color="gold"
-          textAlign="center"
-          transform="translateY(-.7rem)"
-        >
-          irish music for your soul
-        </Heading>
+        <Flex direction="column" align="center">
+          <Flex
+            w={{base: "22rem", sm: "34rem", md: "55rem"}}
+            h="10rem"
+            position="relative"
+            transform="translateY(2rem)"
+          >
+            <Image
+              src="/images/top.png"
+              layout="fill"
+              alt=""
+              objectFit="contain"
+            />
+          </Flex>
+          <Heading
+            fontSize={{base: "3rem", sm: "4.6rem", md: "8rem"}}
+            textAlign="center"
+            fontWeight="light"
+            fontFamily="Almendra SC"
+            letterSpacing=".5rem"
+          >
+            Alehouse Fire
+          </Heading>
+          <Heading
+            as="h2"
+            textTransform="capitalize"
+            fontSize={{sm: "2.7rem", md: "3.5rem"}}
+            fontWeight="normal"
+            color="gold"
+            textAlign="center"
+            transform="translateY(-.7rem)"
+            fontFamily="Almendra SC"
+          >
+            Los Angeles, CA
+          </Heading>
+          <Flex
+            w={{base: "16rem", sm: "20rem", md: "30rem"}}
+            h="10rem"
+            position="relative"
+            transform="translateY(-3rem)"
+          >
+            <Image
+              src="/images/bottom.png"
+              layout="fill"
+              alt=""
+              objectFit="contain"
+            />
+          </Flex>
+        </Flex>
+
         <Heading
           as="h3"
           fontSize="1.7rem"
           fontWeight="semibold"
           textAlign="center"
-          marginTop="3rem"
           letterSpacing=".2rem"
           marginBottom="1rem"
         >
-          Welcome to the home of California&apos;s premier Irish Pub
-          Folk&apos;n&apos;Roll Band!
+          Welcome to the home of California&apos;s premier Irish Band!
         </Heading>
       </Flex>
       <Flex
@@ -86,7 +116,7 @@ const Home: NextPage = () => {
           })}
         </Flex>
       </Flex>
-      <Flex w="100%" marginTop="2rem">
+      <Flex direction={{base: "column", md: "row"}} w="100%" marginTop="2rem">
         <Flex flex="1" direction="column" paddingBottom="3rem">
           <Heading as="h2" marginBottom="2rem">
             News
@@ -100,7 +130,7 @@ const Home: NextPage = () => {
             Upcoming Performances
           </Heading>
           <Flex direction="column">
-            <p>June 18th in Thousand Oaks Concert in the Park</p>
+            <p>June 18th- Thousand Oaks Concert in the Park</p>
           </Flex>
         </Flex>
       </Flex>
