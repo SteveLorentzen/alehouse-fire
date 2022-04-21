@@ -85,7 +85,7 @@ export default function Layout({children}: {children: React.ReactChild}) {
     >
       <Header />
       <Box paddingX="2.5rem">
-        <Flex maxW="80rem" margin="auto">
+        <Flex maxW="90rem" margin="auto">
           {children}
         </Flex>
       </Box>

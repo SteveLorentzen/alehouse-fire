@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Flex direction="column">
         <Flex direction="column" align="center">
           <Flex
-            w={{base: "22rem", sm: "34rem", md: "55rem"}}
+            w={{base: "18rem", sm: "30rem", md: "51rem"}}
             h="10rem"
             position="relative"
             transform="translateY(2rem)"
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
             Los Angeles, CA
           </Heading>
           <Flex
-            w={{base: "16rem", sm: "20rem", md: "30rem"}}
+            w={{base: "16rem", sm: "20rem", md: "28rem"}}
             h="10rem"
             position="relative"
             transform="translateY(-3rem)"
@@ -72,6 +72,7 @@ const Home: NextPage = () => {
           fontWeight="semibold"
           textAlign="center"
           letterSpacing=".2rem"
+          marginTop="-3rem"
           marginBottom="1rem"
         >
           Welcome to the home of California&apos;s premier Irish Band!
@@ -83,13 +84,13 @@ const Home: NextPage = () => {
         w="100%"
         justify="center"
         borderBottom="1px solid white"
-        paddingY="1.5rem"
+        paddingY="5rem"
         align={{base: "center", lg: "flex-start"}}
       >
         <Flex
           w={{base: "100%", lg: "60%"}}
           h={{base: "250", sm: "400", md: "450"}}
-          marginBottom="2rem"
+          marginBottom={{base: "2rem", xl: "4rem"}}
         >
           <iframe
             width="100%"
@@ -105,7 +106,7 @@ const Home: NextPage = () => {
         <Flex
           direction="column"
           w={{base: "100%", lg: "40%"}}
-          marginLeft={{lg: "4rem"}}
+          marginLeft={{lg: "4rem", xl: "6rem"}}
         >
           {descriptionParagraphs.map((paragraph) => {
             return (
@@ -125,7 +126,7 @@ const Home: NextPage = () => {
             <p>Big news is coming in 2022. Stay tuned!!</p>
           </Flex>
         </Flex>
-        <Flex flex="1" direction="column" paddingBottom="3rem">
+        <Flex flex="1" direction="column" paddingBottom="10rem">
           <Heading as="h2" marginBottom="2rem">
             Upcoming Performances
           </Heading>
