@@ -66,6 +66,7 @@ export default function Media() {
         h={{base: "15rem", sm: "27rem", md: "31rem"}}
       >
         <iframe
+          title="Reverb Nation music player"
           width="100%"
           height="100%"
           scrolling="no"
