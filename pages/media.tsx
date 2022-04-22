@@ -1,12 +1,13 @@
 import {Flex, Heading} from "@chakra-ui/react";
 import {PageContentContainer} from "components/ui/page-content-container";
 import {PageHeading} from "components/ui/page-heading";
+import Head from "next/head";
 import React from "react";
 
 function MediaContainer({children}: {children: React.ReactChild}) {
   return (
     <Flex
-      marginY="2rem"
+      marginBottom="8rem"
       w={{sm: "34rem", md: "44rem"}}
       h={{sm: "19rem", md: "24.5rem"}}
     >
@@ -18,6 +19,13 @@ function MediaContainer({children}: {children: React.ReactChild}) {
 export default function Media() {
   return (
     <PageContentContainer>
+      <Head>
+        <title>Media</title>
+        <meta
+          name="description"
+          content="Check out our promo video, duo video, and other media content"
+        />
+      </Head>
       <PageHeading text="Media" />
       <MediaContainer>
         <iframe
@@ -53,7 +61,7 @@ export default function Media() {
         ></iframe>
       </MediaContainer>
       <Flex
-        marginY="2rem"
+        marginBottom="2rem"
         w={{base: "15rem", sm: "27rem", md: "31rem"}}
         h={{base: "15rem", sm: "27rem", md: "31rem"}}
       >

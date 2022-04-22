@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import {Box, Flex, List, ListItem} from "@chakra-ui/react";
-import {generateKey} from "crypto";
 import {useRouter} from "next/router";
 
 const navButtons = [
@@ -70,7 +69,7 @@ function Header() {
 }
 
 function Footer() {
-  return <Flex h="15rem" bg="gray.900" w="100%"></Flex>;
+  return <Flex justifySelf="flex-end" h="15rem" bg="gray.900" w="100%"></Flex>;
 }
 
 export default function Layout({children}: {children: React.ReactChild}) {
@@ -82,6 +81,7 @@ export default function Layout({children}: {children: React.ReactChild}) {
       align="center"
       color="white"
       fontSize="1.3rem"
+      minH="100vh"
     >
       <Header />
       <Box paddingX="2.5rem">

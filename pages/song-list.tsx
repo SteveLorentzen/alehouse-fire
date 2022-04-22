@@ -1,6 +1,7 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import {PageContentContainer} from "components/ui/page-content-container";
 import {PageHeading} from "components/ui/page-heading";
+import Head from "next/head";
 
 const countrySongs = [
   {title: "Africa", band: "Toto"},
@@ -152,6 +153,13 @@ function Song({title, band}: {title: string; band: string}) {
 export default function SongList() {
   return (
     <PageContentContainer>
+      <Head>
+        <title>Song List</title>
+        <meta
+          name="description"
+          content="The official list of songs Alehouse Fire performs"
+        />
+      </Head>
       <PageHeading text="Song List" />
       <Text fontSize="1.5rem" marginBottom="3rem">
         Alehouse Fire prides itself on playing the very best of traditional and

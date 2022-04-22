@@ -7,7 +7,12 @@ export function PageContentContainer({
   children: React.ReactChild[] | React.ReactChild;
 }) {
   return (
-    <Flex direction="column" align="center" w="100%" marginBottom="10rem">
+    <Flex
+      direction="column"
+      align="center"
+      w="100%"
+      minH="calc(100vh - 5rem - 15rem)"
+    >
       {children}
     </Flex>
   );
