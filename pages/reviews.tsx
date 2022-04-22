@@ -1,6 +1,7 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import {PageContentContainer} from "components/ui/page-content-container";
 import {PageHeading} from "components/ui/page-heading";
+import Head from "next/head";
 
 interface IReview {
   name: string;
@@ -227,6 +228,13 @@ function Review({review}: {review: IReview}) {
 export default function Reviews() {
   return (
     <PageContentContainer>
+      <Head>
+        <title>Reviews</title>
+        <meta
+          name="description"
+          content="Read reviews detailing how past clients felt about Alehouse Fire.  "
+        />
+      </Head>
       <PageHeading text="Reviews" />
       <Flex direction="column" maxW="50rem">
         <Heading

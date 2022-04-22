@@ -1,6 +1,7 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import type {NextPage} from "next";
 import Image from "next/image";
+import Head from "next/head";
 
 const descriptionParagraphs = [
   "Alehouse Fire is an Irish, Americana, Bluegrass and Country Band that strives to provide the perfect combination of styles to best suit your event.",
@@ -15,11 +16,18 @@ const descriptionParagraphs = [
 const Home: NextPage = () => {
   return (
     <Flex direction="column" w="100%" align="center">
+      <Head>
+        <title>Alehouse Fire Home</title>
+        <meta
+          name="description"
+          content="Alehouse Fire is a Los Angeles based Irish band that performs all kinds of events including parties, weddings, grand openings, wakes, and corporate functions"
+        />
+      </Head>
       <Flex direction="column">
-        <Flex direction="column" align="center">
+        <Flex direction="column" align="center" marginBottom="4rem">
           <Flex
             w={{base: "18rem", sm: "30rem", md: "51rem"}}
-            h="10rem"
+            h="9rem"
             position="relative"
             transform="translateY(2rem)"
           >
@@ -36,13 +44,14 @@ const Home: NextPage = () => {
             fontWeight="light"
             fontFamily="Almendra SC"
             letterSpacing=".5rem"
+            marginBottom={{base: "1.5rem", sm: ".7rem"}}
           >
             Alehouse Fire
           </Heading>
           <Heading
             as="h2"
             textTransform="capitalize"
-            fontSize={{sm: "2.7rem", md: "3.5rem"}}
+            fontSize={{base: "1.8rem", md: "3.5rem"}}
             fontWeight="normal"
             color="gold"
             textAlign="center"
@@ -53,9 +62,8 @@ const Home: NextPage = () => {
           </Heading>
           <Flex
             w={{base: "16rem", sm: "20rem", md: "28rem"}}
-            h="10rem"
+            h="3rem"
             position="relative"
-            transform="translateY(-3rem)"
           >
             <Image
               src="/images/bottom.png"
@@ -68,23 +76,23 @@ const Home: NextPage = () => {
 
         <Heading
           as="h3"
-          fontSize="1.7rem"
+          fontSize={{base: "1.5rem", sm: "1.7rem", md: "2rem"}}
           fontWeight="semibold"
           textAlign="center"
-          letterSpacing=".2rem"
-          marginTop="-3rem"
-          marginBottom="1rem"
+          letterSpacing=".4rem"
+          marginBottom="2rem"
         >
           Welcome to the home of California&apos;s premier Irish Band!
         </Heading>
       </Flex>
+      <hr style={{width: "100%"}} />
       <Flex
         direction={{base: "column", lg: "row"}}
         marginX="auto"
         w="100%"
         justify="center"
         borderBottom="1px solid white"
-        paddingY="5rem"
+        paddingY="4rem"
         align={{base: "center", lg: "flex-start"}}
       >
         <Flex

@@ -1,6 +1,7 @@
 import {Flex, Heading, Text} from "@chakra-ui/react";
 import {PageContentContainer} from "components/ui/page-content-container";
 import {PageHeading} from "components/ui/page-heading";
+import Head from "next/head";
 import Image from "next/image";
 
 const aboutParagraphs = [
@@ -32,6 +33,13 @@ const bandMembers = [
 function About() {
   return (
     <PageContentContainer>
+      <Head>
+        <title>About</title>
+        <meta
+          name="description"
+          content="Learn all about the members of Alehouse Fire."
+        />
+      </Head>
       <Flex w="100%" justify="center">
         <PageHeading text="About" />
       </Flex>
