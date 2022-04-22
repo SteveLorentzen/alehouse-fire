@@ -59,7 +59,6 @@ function Header() {
         fontSize="1.5rem"
         _hover={{color: "gold"}}
         color={router.pathname === "/" ? "gold" : "white"}
-        marginLeft=".5rem"
       >
         <Link href="/">
           <a>Alehouse Fire</a>
