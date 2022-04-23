@@ -39,7 +39,7 @@ const Home: NextPage = () => {
             />
           </Flex>
           <Heading
-            fontSize={{base: "3rem", sm: "4.6rem", md: "8rem"}}
+            fontSize={{base: "3.5rem", sm: "4.6rem", md: "8rem"}}
             textAlign="center"
             fontWeight="light"
             fontFamily="Almendra SC"
